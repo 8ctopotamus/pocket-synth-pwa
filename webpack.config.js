@@ -6,7 +6,7 @@ const WebpackPwaManifest = require('webpack-pwa-manifest')
 const { GenerateSW } = require('workbox-webpack-plugin')
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: './src/js/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -62,13 +62,13 @@ module.exports = {
       display: 'standalone',
       icons: [
         {
-          src: path.resolve('src/images/background-dark-1.jpg'),
+          src: path.resolve('src/images/background-dark-1.png'),
           sizes: [96, 128, 192, 256, 300, 512],
         }
       ]
     }),
-    // new GenerateSW({
-    //   swDest: './sw.js'
-    // })
+    new GenerateSW({
+      swDest: './sw.js'
+    })
   ]
 }
