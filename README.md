@@ -5,7 +5,7 @@ A synth pad progressive web app using ToneJS. Code-along for class.
 
 ## TODO
 * [x] set up webpack
-* [ ] build slider pad UI
+* [x] build slider pad UI
 * [ ] set up ToneJS
 * [ ] implement indexedDB
 * [ ] controls / save preset
