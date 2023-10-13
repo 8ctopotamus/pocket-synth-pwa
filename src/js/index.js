@@ -1,3 +1,5 @@
 import '../css/styles.css'
 
-console.log('hello')
+import { Pad } from './pad'
+
+const pad = new Pad()
