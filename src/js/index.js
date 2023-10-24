@@ -1,6 +1,5 @@
 import '../css/styles.css'
 
-import './db'
 import { PocketSynth } from './synth'
 import { Pad } from './pad'
 import { Controls } from './controls'
@@ -12,6 +11,8 @@ new Pad(
   () => pocketSynth.triggerRelease(),
   data => pocketSynth.moveNote(data),
 )
+
+new Controls()
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./sw.js')

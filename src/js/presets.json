@@ -1,0 +1,27 @@
+[
+  {
+    "harmonicity": 0.5,
+    "type": "square",
+		"image": "background-dark-2.png"
+  },
+  {
+    "harmonicity": 0.45,
+    "type": "sine",
+		"image": "background-dark-1.png"
+  },
+  {
+    "harmonicity": 0.35,
+    "type": "triangle",
+		"image": "background-light-1.png"
+  },
+  {
+    "harmonicity": 0.55,
+    "type": "saw",
+		"image": "background-light-2.png"
+  },
+  {
+    "harmonicity": 0.5,
+    "type": "sine",
+		"image": "background-light-3.png"
+  }
+]

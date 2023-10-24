@@ -10,6 +10,21 @@
     <div id="pad">
       <div id="puck"></div>
     </div>
+    <div id="controls">
+      <label for="type">
+        Type
+        <select name="type">
+          <option value="sine">sine</option>
+          <option value="triangle">triangle</option>
+          <option value="square">square</option>
+          <option value="saw">saw</option>
+        </select>
+      </label>
+      <label for="harmonicity">
+        Harmonicity
+        <input name="harmonicity" type="range" step="0.01">
+      </label>
+    </div>
   </main>
 </body>
 </html>

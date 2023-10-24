@@ -1,11 +1,12 @@
 import { openDB } from "idb"
+import presetsJSON from './presets.json'
 
 const dbName = 'pocket-synth-pwa-db'
 const dbVersion = 1
 const storeName = 'presets'
 
-const initDB = () => {
-  openDB(dbName, dbVersion, {
+const initDB = async () => {
+  await openDB(dbName, dbVersion, {
     upgrade(db) {
       db.createObjectStore(storeName, {
         keyPath: 'id',
@@ -13,6 +14,19 @@ const initDB = () => {
       })
     }
   })
+}
+
+const seedPresets = async () => {
+  // seed the db if empty
+  const db = await openDB(dbName, dbVersion)
+  const transaction = db.transaction(storeName, 'readwrite')
+  const store = transaction.store
+  const presets = await store.getAllKeys()
+  if ((presets.length === 0)) {
+    for (const p of presetsJSON) {
+      await store.add(p)
+    }
+  }
 }
 
 // create
@@ -52,7 +66,8 @@ export const deletePreset = async id => {
   return await store.delete(id)
 }
 
-initDB()
+await initDB()
+await seedPresets()
 
 // addPreset({ harmonicity: 1, modulationType: 'square' })
 // console.log(await getAllPresets())

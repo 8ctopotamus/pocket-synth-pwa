@@ -1,0 +1,15 @@
+#controls {
+  background: black;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#controls, 
+#controls label {
+  display: flex;
+  gap: 15px;
+}
+
+#controls label {
+  flex-direction: column;
+}
